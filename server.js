@@ -8,6 +8,7 @@ const methodOverride = require("method-override");
 
 // === Internal Modules ===
 
+const controllers = require("./controllers");
 
 // === Instanced Modules ===
 const app = express();
