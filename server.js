@@ -7,7 +7,7 @@ const methodOverride = require("method-override");
 
 
 // === Internal Modules ===
-const controllers = require("./controllers");
+
 
 // === Instanced Modules ===
 const app = express();
@@ -29,6 +29,14 @@ app.use(methodOverride("_method"));
 
 // === Routes ===
 
+// 404
+app.get("/*", (req,res) => {
+    const context = {
+        error: req.error,
+    };
+    res.send("404 works");
+    // res.render("404", context);
+});
 
 
 // === Bind Server ===
