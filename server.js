@@ -29,6 +29,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
 // === Routes ===
+app.get("/", (req, res) => {
+    res.send("Root route works");
+});
 
 // 404
 app.get("/*", (req,res) => {
