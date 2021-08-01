@@ -26,4 +26,9 @@ router.get("/:id", function (req, res) {
     res.send(`show route works with id: ${req.params.id}`);
 });
 
+//edit
+router.get("/:id/edit", function (req, res) {
+    res.send(`edit route works with id: ${req.params.id}`);
+});
+
 module.exports = router;
