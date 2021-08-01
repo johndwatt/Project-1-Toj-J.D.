@@ -21,12 +21,22 @@ app.set("view engine", "ejs");
 
 // === Middleware ===
 
+app.use((req, res, next) => {
+    res.locals.user = req.session.currentUser;
+    return next();
+});
+
+app.use(require("./utils/navlinks"));
+
 app.use(express.static("public"));
 
 // NOTE allow body data for all routes
 app.use(express.urlencoded({ extended: true }));
 
 app.use(methodOverride("_method"));
+
+app.use(require("./utils/logger"));
+
 
 app.use("/", controllers.auth);
 app.use("/assignments", controllers.assignment);
