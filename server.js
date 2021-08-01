@@ -7,8 +7,8 @@ const methodOverride = require("method-override");
 
 
 // === Internal Modules ===
+const controllers = require("./controllers/index");
 
-const controllers = require("./controllers");
 
 // === Instanced Modules ===
 const app = express();
@@ -28,7 +28,14 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(methodOverride("_method"));
 
+app.use("/", controllers.auth);
+app.use("/assignments", controllers.assignment);
+
+
 // === Routes ===
+app.get("/", (req, res) => {
+    res.send("Root route works");
+});
 
 // 404
 app.get("/*", (req,res) => {
