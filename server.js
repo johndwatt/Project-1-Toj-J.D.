@@ -28,6 +28,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(methodOverride("_method"));
 
+app.use(require("./utils/logger"));
+
+
 app.use("/", controllers.auth);
 app.use("/assignments", controllers.assignment);
 
