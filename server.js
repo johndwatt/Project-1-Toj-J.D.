@@ -26,7 +26,7 @@ app.use((req, res, next) => {
     return next();
 });
 
-
+app.use(require("./utils/navlinks"));
 
 app.use(express.static("public"));
 
