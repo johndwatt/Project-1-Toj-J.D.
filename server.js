@@ -28,18 +28,14 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(methodOverride("_method"));
 
+app.use("/", controllers.auth);
 app.use("/assignments", controllers.assignment);
+
 
 // === Routes ===
 app.get("/", (req, res) => {
     res.send("Root route works");
 });
-
-
-/* //index
-app.get("/assignments", function (req, res) {
-    res.send("index route works");
-}); */
 
 // 404
 app.get("/*", (req,res) => {
