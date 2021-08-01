@@ -20,4 +20,8 @@ router.post("/signup", (req, res) => {
     res.send("signup post route works");
 });
 
+router.get("/logout", (req, res) => {
+    res.send("logout route works");
+});
+
 module.exports = router;
