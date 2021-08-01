@@ -12,6 +12,10 @@ router.get("/signup", (req, res) => {
     res.send("signup route works");
 });
 
+router.post("/login", (req, res) => {
+    res.send("login post route works");
+});
+
 router.post("/signup", (req, res) => {
     res.send("signup post route works");
 });
