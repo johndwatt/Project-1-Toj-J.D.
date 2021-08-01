@@ -31,4 +31,13 @@ router.get("/:id/edit", function (req, res) {
     res.send(`edit route works with id: ${req.params.id}`);
 });
 
+//update
+router.put("/:id", function (req, res) {
+    res.send({
+        message: "update route works",
+        body: req.body,
+        id: req.params.id,
+    });
+});
+
 module.exports = router;
