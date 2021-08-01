@@ -6,7 +6,7 @@ const submissionSchema = new mongoose.Schema(
             type: String,
             required: [true, "You must provide your name to submit your assignment"],
         },
-        submissionDate: new Date,
+        submissionDate: Date,
         file: {
             type: String,
             required: [true, "You must add a file with your work to submit your assignment"],   
