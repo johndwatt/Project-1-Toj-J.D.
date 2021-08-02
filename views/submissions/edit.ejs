@@ -20,25 +20,30 @@
                 <h1 class="ui header">First Header</h1>
                 <button class="ui button toggler">Menu</button>
             </header>        
-            <div class="ui form">
                 <h3 class="ui header">Update Submission</h3>
+                <form class="ui form" action="/submissions/<%= submission.id%>?_method=PUT"  method="POST">
+                  <% if (typeof error !== "undefined") { %>
+                      <%= error.message %> 
+                  <% } %> 
                 <div class="field">
                     <label>Student Name</label>
                     <input 
                     type="text"
-                    name="name"
-                    placeholder="Your Name Here">
+                    name="studentName"
+                    placeholder="Your Name Here"
+                    value="<%= submission.studentName %>">
                 </div>
                 <div class="field">
                   <label>File Upload</label>
                   <textarea
-                  name="content"
-                  placeholder="File Upload"></textarea>
+                  name="file"
+                  placeholder="File Upload"><%= submission.file %> </textarea>
                 </div>
                 <div class="container">
-                <div class="ui blue submit button">Submit Assignment</div>
-                <div class="ui red cancel button">Cancel</div>
-                </div>     
+                <button class="ui blue submit button" type="submit">Submit Assignment</button>
+                <button class="ui red cancel button" type="submit">Cancel</button>
+                </div>
+                </form>     
     <script>
     $('.toggler').on('click', function() {
 	    $('.ui.labeled.icon.sidebar').sidebar('toggle');
