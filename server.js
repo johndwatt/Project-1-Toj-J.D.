@@ -47,7 +47,7 @@ app.use("/submissions", controllers.submission);
 
 // === Routes ===
 app.get("/", (req, res) => {
-    res.send("Root route works");
+    res.redirect("/assignments");
 });
 
 // 404
