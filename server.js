@@ -3,12 +3,12 @@ const express = require("express");
 
 const methodOverride = require("method-override");
 
+const session = require("express-session");
 
-
+const MongoStore = require("connect-mongo");
 
 // === Internal Modules ===
 const controllers = require("./controllers/index");
-
 
 // === Instanced Modules ===
 const app = express();
@@ -39,8 +39,8 @@ app.use(methodOverride("_method"));
 
 app.use(require("./utils/logger"));
 
-
 app.use("/", controllers.auth);
+
 app.use("/assignments", controllers.assignment);
 
 app.use("/submissions", controllers.submission);
@@ -57,7 +57,6 @@ app.get("/*", (req,res) => {
     };
     res.render("404", context);
 });
-
 
 // === Bind Server ===
 app.listen(PORT, () => {
