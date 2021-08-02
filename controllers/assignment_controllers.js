@@ -5,7 +5,7 @@ const { Assignment } = require("../models");
 
 //index
 router.get("/", (req, res) => {
-    res.send("index route works");
+    return res.render("assignments/index");
 });
 
 //new
