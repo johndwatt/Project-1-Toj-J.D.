@@ -9,7 +9,7 @@ router.get("/", async (req, res, next) => {
     try {
         const allAssignments = await Assignment.find({});
         const context = {
-            allAssignments
+            assignments: allAssignments,
         };
         return res.render("assignments/index", context);
     } catch (error){
