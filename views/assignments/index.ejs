@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <%- include('../partials/_head') %> 
 <body>
-    
+    <div class="ui left demo vertical inverted thin sidebar labeled icon menu">
+        <a class="item">
+            My assignments
+          </a>
+          <a class="item">
+            Item 2
+          </a>
+          <a class="item">
+            Item 3
+          </a>
+    </div>
+    <div class="pusher">
+        <header>
+            <h1 class="ui header">First header</h1>
+            <button class="ui button toggler">Menu</button>
+        </header>        
+        <div class="ui cards">
+            <div class="card">
+              <div class="content">
+                <div class="ui top attached label">HTML</div>
+                <div class="header">Assignment 1</div>
+                <div class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, iure fugit? Deserunt, harum. Modi saepe minima commodi ab non, ad nobis maiores, dolore possimus consequatur id quas porro! Possimus, explicabo. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, dolore ex? Voluptate vero earum cupiditate, adipisci laboriosam quae beatae minus esse quia, magni maiores. Delectus error similique reprehenderit facere! Placeat!
+                </div>
+              </div>
+              <div class="ui bottom attached button">
+                <i class="add icon"></i>
+                View Assignment
+              </div>
+            </div>
+            <div class="card">
+              <div class="content">
+                <div class="ui top attached label">HTML</div>
+                <div class="header">Assignment 2</div>
+                <div class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, iure fugit? Deserunt, harum. Modi saepe minima commodi ab non, ad nobis maiores, dolore possimus consequatur id quas porro! Possimus, explicabo. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, dolore ex? Voluptate vero earum cupiditate, adipisci laboriosam quae beatae minus esse quia, magni maiores. Delectus error similique reprehenderit facere! Placeat!
+                </div>
+              </div>
+              <div class="ui bottom attached button">
+                <i class="add icon"></i>
+                View Assignment
+              </div>
+            </div>
+    </div>
+    <!-- FIXME: temporary until app.js connection is fixed-->
+<script>
+$('.toggler').on('click', function() {
+    $('.ui.labeled.icon.sidebar').sidebar('toggle');
+});
+
+</script>
 </body>
 </html>
