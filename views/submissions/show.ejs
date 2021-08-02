@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/_head') %> 
+    <body>
+        <div class="ui left demo vertical inverted thin sidebar labeled icon menu">
+            <a class="item">
+                My assignments
+              </a>
+              <a class="item">
+                My Submissions
+              </a>
+              <a class="item">
+                Item 3
+              </a>
+        </div>
+        <div class="pusher">
+            <header>
+                <h1 class="ui header">First header</h1>
+                <button class="ui button toggler">Menu</button>
+            </header>        
+            <h2 class="ui header">Your Submission</h2>
+            <div class="ui cards">   
+                <div class="card">
+                  <div class="content">
+                    <div class="ui top attached label">HTML</div>
+                    <div class="header"><%= submission.studentName %></div>
+                    <div class="description">
+                      <%= submission.submissionDate %>
+                    </div>
+                    <div class="description">
+                      <%= submission.file %>
+                    </div>
+                  </div>
+                  <div class="ui bottom attached button">
+                    <i class="add icon"></i>
+                    View Submission
+                  </div>
+                </div>
+                
+                <div class="container">
+                  <form
+                  action="/submissions/<%= submission.id %>/edit"
+                  method="GET">
+                    <button class="ui blue button" type="submit">Update Submission</button>
+                  </form>
+                  <form
+                  action="/submissions/<%= submission.id %>?_method=DELETE"
+                  method="POST">
+                    <button class="ui red button" type="submit">Delete Submission</button>
+                  </form>
+                </div>  
+            </div>
+            <h2 class="ui header">For This Assignment</h2> 
+            </div>    
+        <!-- FIXME: temporary until app.js connection is fixed-->
+    <script>
+    $('.toggler').on('click', function() {
+        $('.ui.labeled.icon.sidebar').sidebar('toggle');
+    });
+    </script>
+    </body>
+</html>   

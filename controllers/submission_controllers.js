@@ -8,12 +8,12 @@ const { Submission } = require("../models");
 
 router.get("/new", (req, res) => {
     const context = {};
-    return res.render("submissions/new", context);
+    return res.render("submissions/new");
   });
   
 //  create route - functional
 
-router.get("/", async (req,res, next) => {
+router.post("/", async (req,res, next) => {
     try {
     const createdSubmissions = await Submission.create(req.body);
     return res.redirect(`/submissions/${createdSubmissions.id}`);
@@ -28,7 +28,7 @@ router.get("/", async (req,res, next) => {
 // show route 
 
 router.get("/:id", async (req, res, next) => {
-    try{
+    try {
         const foundSubmission = await Submission.findById(req.params.id);
         const context = {
             submission: foundSubmission,
@@ -41,7 +41,41 @@ router.get("/:id", async (req, res, next) => {
       }
 });
 
+// edit route
+
+router.get("/:id/edit", async (req, res, next) => {
+    try {
+        const foundItem = await Submission.findById(req.params.id);
+        const context = {
+            submission: foundItem,
+        };
+        return res.render("submissions/edit", context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+      } 
+});
+
 // update route
+
+router.put("/:id", async (req, res, next) => {
+    try {
+        const updatedSubmission = await Submission.findByIdAndUpdate(req.params.id, 
+        {
+            $set: req.body,
+        },
+        {
+            new: true,
+        });
+
+        return res.redirect(`/submissions/${updatedSubmission.id}`);
+    }   catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+      }
+});
 
 
 module.exports = router;
