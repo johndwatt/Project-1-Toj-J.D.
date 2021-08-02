@@ -81,11 +81,15 @@ router.put("/:id", async (req, res, next) => {
 });
 
 //destroy
-router.delete("/:id", (req, res) => {
-    res.send({
-        message: "delete route works",
-        id: req.params.id,
-    });
+router.delete("/:id", async (req, res) => {
+    try {
+        await Assignment.findByIdAndDelete(req.params.id);
+        return res.redirect("/assignments");
+    } catch (error) {
+        console.log(error); 
+        req.error = error;
+        return next();
+    }
 });
 
 module.exports = router;
