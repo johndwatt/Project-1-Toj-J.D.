@@ -8,12 +8,12 @@ const { Submission } = require("../models");
 
 router.get("/new", (req, res) => {
     const context = {};
-    return res.render("submissions/new", context);
+    return res.render("submissions/new");
   });
   
 //  create route - functional
 
-router.get("/", async (req,res, next) => {
+router.post("/", async (req,res, next) => {
     try {
     const createdSubmissions = await Submission.create(req.body);
     return res.redirect(`/submissions/${createdSubmissions.id}`);
@@ -21,7 +21,7 @@ router.get("/", async (req,res, next) => {
     const context = {
         error,
         };
-        return res.render("submissions/new", context);
+        return res.render("submissions", context);
     } 
 });
 
@@ -41,7 +41,7 @@ router.get("/:id", async (req, res, next) => {
       }
 });
 
-// update route
+// edit route
 
 router.get("/:id/edit", async (req, res, next) => {
     try {
@@ -56,6 +56,8 @@ router.get("/:id/edit", async (req, res, next) => {
         return next();
       } 
 });
+
+// update route
 
 router.put("/:id", async (req, res, next) => {
     try {
