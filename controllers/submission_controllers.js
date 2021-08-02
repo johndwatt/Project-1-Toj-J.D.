@@ -21,7 +21,7 @@ router.post("/", async (req,res, next) => {
     const context = {
         error,
         };
-        return res.render("submissions", context);
+        return res.render("submissions/new", context);
     } 
 });
 
@@ -67,15 +67,15 @@ router.put("/:id", async (req, res, next) => {
         },
         {
             new: true,
-        },
-    )
-        const context = {
-            submission: updatedSubmission,
-        };
-    } catch (error) {
+        });
+
+        return res.redirect(`/submissions/${updatedSubmission.id}`);
+    }   catch (error) {
         console.log(error);
         req.error = error;
         return next();
       }
 });
+
+
 module.exports = router;

@@ -12,47 +12,69 @@
         <title>Thematic LMS</title>
     </head>
     <body>
-        <body>
-            <div class="ui left demo vertical inverted thin sidebar labeled icon menu">
-                <a class="item">
-                    My Assignments
-                  </a>
-                  <a class="item">
-                    My Submissions
-                  </a>
-                  <a class="item">
-                    Item 3
-                  </a>
+        <div class="ui left demo vertical inverted thin sidebar labeled icon menu">
+            <a class="item">
+                My assignments
+              </a>
+              <a class="item">
+                My Submissions
+              </a>
+              <a class="item">
+                Item 3
+              </a>
+        </div>
+        <div class="pusher">
+            <header>
+                <h1 class="ui header">First header</h1>
+                <button class="ui button toggler">Menu</button>
+            </header>        
+            <h2 class="ui header">Submissions</h2>
+            <div class="ui cards">   
+                <div class="card">
+                  <div class="content">
+                    <div class="ui top attached label">HTML</div>
+                    <div class="header">Submission 1</div>
+                    <div class="description">
+                        file here
+                    </div>
+                  </div>
+                  <div class="ui bottom attached button">
+                    <i class="add icon"></i>
+                    View Submission
+                  </div>
+                </div>
+                <div class="ui card">
+                    <div class="content">
+                      <div class="ui top attached label">HTML</div>
+                      <div class="header">Submission 1</div>
+                      <div class="description">
+                          file here
+                      </div>
+                    </div>
+                    <div class="ui bottom attached button">
+                      <i class="add icon"></i>
+                      View Submission
+                    </div>
+                  </div>
+            
             </div>
-            <div class="pusher">
-                <header>
-                    <h1 class="ui header">First Header</h1>
-                    <button class="ui button toggler">Menu</button>
-                </header>        
-                <div class="ui form">
-                    <h3 class="ui header">Update Submission</h3>
-                    <div class="field">
-                        <label>Student Name</label>
-                        <input 
-                        type="text"
-                        name="name"
-                        placeholder="Your Name Here">
+            <h2 class="ui header">Assignment</h2> 
+            <div class="ui cards">
+                <div class="card">
+                  <div class="content">
+                    <div class="ui top attached label"><%= assignment.dueDate %></div>
+                    <div class="header"><%= assignment.name %></div>
+                    <div class="description">
+                      <%= assignment.content %>
                     </div>
-                    <div class="field">
-                      <label>File Upload</label>
-                      <textarea
-                      name="content"
-                      placeholder="File Upload"></textarea>
-                    </div>
-                    <div class="container">
-                    <div class="ui blue submit button">Submit Assignment</div>
-                    <div class="ui red cancel button">Cancel</div>
-                    </div>     
-        <script>
-        $('.toggler').on('click', function() {
-            $('.ui.labeled.icon.sidebar').sidebar('toggle');
-        });
-    
-        </script>
-        </body>
-    </html>
+                  </div>
+                </div>
+            </div>    
+        <!-- FIXME: temporary until app.js connection is fixed-->
+    <script>
+    $('.toggler').on('click', function() {
+        $('.ui.labeled.icon.sidebar').sidebar('toggle');
+    });
+    </script>
+    </body>
+</html>
