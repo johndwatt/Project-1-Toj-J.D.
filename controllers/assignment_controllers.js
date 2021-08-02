@@ -26,11 +26,16 @@ router.get("/new", (req, res) => {
 });
 
 //create
-router.post("/", (req, res) => {
-    res.send({
-        message: "create route works",
-        body: req.body,
-    });
+router.post("/", async (req, res, next) => {
+    try {
+        const createdAssignment = await Assignment.create(req.body);
+        return res.redirect(`/assignments/${createdAssignment.id}`)
+    } catch (error) {
+        const context = {
+            error,
+        };
+        return res.render ("assignments/new", context);
+    }
 });
 
 //show
