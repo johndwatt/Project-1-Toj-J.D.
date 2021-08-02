@@ -69,12 +69,15 @@ router.get("/:id/edit", async (req, res) => {
 });
 
 //update
-router.put("/:id", (req, res) => {
-    res.send({
-        message: "update route works",
-        body: req.body,
-        id: req.params.id,
-    });
+router.put("/:id", async (req, res, next) => {
+    try {
+        const updatedAssignment = await Assignment.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true});
+        return res.redirect(`/assignments/${updatedAssignment.id}`)
+    } catch (error) {
+        console.log(error); 
+        req.error = error;
+        return next();
+    }
 });
 
 //destroy
