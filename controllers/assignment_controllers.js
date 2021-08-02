@@ -5,12 +5,12 @@ const { Assignment } = require("../models");
 
 //index
 router.get("/", (req, res) => {
-    res.send("index route works");
+    return res.render("assignments/index");
 });
 
 //new
 router.get("/new", (req, res) => {
-    res.send("new route works");
+    return res.render("assignments/new");
 });
 
 //create
@@ -29,6 +29,7 @@ router.get("/:id", (req, res) => {
 //edit
 router.get("/:id/edit", (req, res) => {
     res.send(`edit route works with id: ${req.params.id}`);
+    //return res.render("assignments/edit");
 });
 
 //update

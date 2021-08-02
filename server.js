@@ -21,12 +21,14 @@ app.set("view engine", "ejs");
 
 // === Middleware ===
 
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
     res.locals.user = req.session.currentUser;
     return next();
-});
+}); 
+this also brakes nodemon - please do not add middleware that is not actively being used
+*/
 
-app.use(require("./utils/navlinks"));
+//app.use(require("./utils/navlinks")); //this breaks nodemon, please check and fix
 
 app.use(express.static("public"));
 

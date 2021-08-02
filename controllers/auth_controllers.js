@@ -5,11 +5,11 @@ const { User } = require("../models");
 
 //index - login
 router.get("/login", (req, res) => {
-    res.send("login route works");
+    return res.render("auth/login");
 });
 
 router.get("/signup", (req, res) => {
-    res.send("signup route works");
+    return res.render("auth/signup");
 });
 
 router.post("/login", (req, res) => {

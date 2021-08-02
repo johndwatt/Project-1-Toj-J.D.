@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/_head') %>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles/main.css">
+        <script src="/scripts/app.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+        <title>Thematic LMS</title>
+    </head>
     <body>
         <div class="ui left demo vertical inverted thin sidebar labeled icon menu">
             <a class="item">
@@ -19,34 +29,32 @@
                 <button class="ui button toggler">Menu</button>
             </header>        
             <div class="ui form">
-                <h3 class="ui header">Update Assignment</h3>
+                <h3 class="ui header">Create New Assignment</h3>
                 <div class="field">
                     <label>Assignment Name</label>
                     <input 
                     type="text"
                     name="name"
-                    placeholder="Project 1"
-                    value="<%= assignment.name %>">
+                    placeholder="Project 1">
                 </div>
                 <div class="field">
                     <label>Assignment Due Date</label>
                     <input 
                     type="date"
-                    name="dueDate"
-                    value="<%= assignment.dueDate %>">
+                    name="dueDate">
                 </div>
                 <div class="field">
                   <label>Assignment Content</label>
                   <textarea
                   name="content"
-                  placeholder="Assignment content goes here..."><%= assignment.content %></textarea>
+                  placeholder="Assignment content goes here..."></textarea>
                 </div>
-                <div class="ui blue submit button">Update Assignment</div>
+                <div class="ui green submit button">Create Assignment</div>
     <script>
     $('.toggler').on('click', function() {
-        $('.ui.labeled.icon.sidebar').sidebar('toggle');
+	    $('.ui.labeled.icon.sidebar').sidebar('toggle');
     });
-    
+
     </script>
     </body>
 </html>
