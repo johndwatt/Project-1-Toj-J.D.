@@ -77,5 +77,17 @@ router.put("/:id", async (req, res, next) => {
       }
 });
 
+//destroy
+router.delete("/:id", async (req, res) => {
+    try {
+        await Submission.findByIdAndDelete(req.params.id);
+        return res.redirect("/assignments");
+    } catch (error) {
+        console.log(error); 
+        req.error = error;
+        return next();
+    }
+});
+
 
 module.exports = router;
