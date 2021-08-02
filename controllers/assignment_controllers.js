@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 
 //new
 router.get("/new", (req, res) => {
-    res.send("new route works");
+    return res.render("assignments/new");
 });
 
 //create
