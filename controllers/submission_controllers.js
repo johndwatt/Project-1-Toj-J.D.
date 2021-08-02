@@ -77,7 +77,7 @@ router.put("/:id", async (req, res, next) => {
       }
 });
 
-//destroy
+// destroy
 router.delete("/:id", async (req, res) => {
     try {
         await Submission.findByIdAndDelete(req.params.id);

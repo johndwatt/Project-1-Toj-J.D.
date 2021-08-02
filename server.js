@@ -47,7 +47,7 @@ app.use("/submissions", controllers.submission);
 
 // === Routes ===
 app.get("/", (req, res) => {
-    res.send("Root route works");
+    res.redirect("/assignments");
 });
 
 // 404
@@ -55,8 +55,7 @@ app.get("/*", (req,res) => {
     const context = {
         error: req.error,
     };
-    res.send("404 works");
-    // res.render("404", context);
+    res.render("404", context);
 });
 
 
