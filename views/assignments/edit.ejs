@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <%- include('../partials/_head') %>
+    <body>
+        <div class="ui left demo vertical inverted thin sidebar labeled icon menu">
+            <a class="item">
+                My assignments
+              </a>
+              <a class="item">
+                Item 2
+              </a>
+              <a class="item">
+                Item 3
+              </a>
+        </div>
+        <div class="pusher">
+            <header>
+                <h1 class="ui header">First Header</h1>
+                <button class="ui button toggler">Menu</button>
+            </header>        
+            <div class="ui form">
+                <h3 class="ui header">Create New Assignment</h3>
+                <div class="field">
+                    <label>Assignment Name</label>
+                    <input 
+                    type="text"
+                    name="name"
+                    placeholder="Project 1"
+                    value="<%= assignment.name %>">
+                </div>
+                <div class="field">
+                    <label>Assignment Due Date</label>
+                    <input 
+                    type="date"
+                    name="dueDate"
+                    value="<%= assignment.dueDate %>">
+                </div>
+                <div class="field">
+                  <label>Assignment Content</label>
+                  <textarea
+                  name="content"
+                  placeholder="Assignment content goes here..."><%= assignment.content %></textarea>
+                </div>
+                <div class="ui green submit button">Create Assignment</div>
+    <script>
+    $('.toggler').on('click', function() {
+        $('.ui.labeled.icon.sidebar').sidebar('toggle');
+    });
     
-</body>
+    </script>
+    </body>
 </html>
