@@ -55,8 +55,7 @@ app.get("/*", (req,res) => {
     const context = {
         error: req.error,
     };
-    res.send("404 works");
-    // res.render("404", context);
+    res.render("404", context);
 });
 
 

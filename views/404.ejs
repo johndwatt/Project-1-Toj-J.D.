@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/_head') %>
+    </head>
+<body>
+    <div class="404 - ui center aligned container">
+        <h1 class="ui header">404 - Page Not Found 😞</h1>
+              <% if (error) { %>
+            <p><%= error.message %></p>
+              <% } %>
+        <form action="/assignments" method="GET">
+        <button 
+        class="ui blue button" 
+        type="submit">Back To My Assignments</button>
+        </form>
+    </div>
+
+</body>
+</html>
