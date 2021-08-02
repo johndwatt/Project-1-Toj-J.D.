@@ -25,36 +25,56 @@
         </div>
         <div class="pusher">
             <header>
-                <h1 class="ui header">First Header</h1>
+                <h1 class="ui header">First header</h1>
                 <button class="ui button toggler">Menu</button>
             </header>        
-            <div class="ui form">
-                <h3 class="ui header">Create New Assignment</h3>
-                <div class="field">
-                    <label>Assignment Name</label>
-                    <input 
-                    type="text"
-                    name="name"
-                    placeholder="Project 1">
+           <h2 class="ui header">Assignment</h2> 
+           <div class="ui cards">
+                <div class="card">
+                  <div class="content">
+                    <div class="ui top attached label">HTML</div>
+                    <div class="header">Assignment 1</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, iure fugit? Deserunt, harum. Modi saepe minima commodi ab non, ad nobis maiores, dolore possimus consequatur id quas porro! Possimus, explicabo. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, dolore ex? Voluptate vero earum cupiditate, adipisci laboriosam quae beatae minus esse quia, magni maiores. Delectus error similique reprehenderit facere! Placeat!
+                    </div>
+                  </div>
                 </div>
-                <div class="field">
-                    <label>Assignment Due Date</label>
-                    <input 
-                    type="date"
-                    name="dueDate">
+            </div>    
+            <h2 class="ui header">Submissions</h2>
+            <div class="ui cards">   
+                <div class="card">
+                  <div class="content">
+                    <div class="ui top attached label">HTML</div>
+                    <div class="header">Submission 1</div>
+                    <div class="description">
+                        file here
+                    </div>
+                  </div>
+                  <div class="ui bottom attached button">
+                    <i class="add icon"></i>
+                    View Submission
+                  </div>
                 </div>
-                <div class="field">
-                  <label>Assignment Content</label>
-                  <textarea
-                  name="content"
-                  placeholder="Assignment content goes here..."></textarea>
-                </div>
-                <div class="ui green submit button">Create Assignment</div>
+                <div class="card">
+                    <div class="content">
+                      <div class="ui top attached label">HTML</div>
+                      <div class="header">Submission 1</div>
+                      <div class="description">
+                          file here
+                      </div>
+                    </div>
+                    <div class="ui bottom attached button">
+                      <i class="add icon"></i>
+                      View Submission
+                    </div>
+                  </div>
+        </div>
+        <!-- FIXME: temporary until app.js connection is fixed-->
     <script>
     $('.toggler').on('click', function() {
-	    $('.ui.labeled.icon.sidebar').sidebar('toggle');
+        $('.ui.labeled.icon.sidebar').sidebar('toggle');
     });
-
+    
     </script>
     </body>
 </html>
