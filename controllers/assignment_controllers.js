@@ -54,26 +54,42 @@ router.get("/:id", async (req, res) => {
 });
 
 //edit
-router.get("/:id/edit", (req, res) => {
-    res.send(`edit route works with id: ${req.params.id}`);
-    //return res.render("assignments/edit");
+router.get("/:id/edit", async (req, res) => {
+    try {
+        const foundAssignment = await Assignment.findById(req.params.id);
+        const context = {
+            assignment: foundAssignment,
+        };
+        return res.render("assignments/edit", context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
 });
 
 //update
-router.put("/:id", (req, res) => {
-    res.send({
-        message: "update route works",
-        body: req.body,
-        id: req.params.id,
-    });
+router.put("/:id", async (req, res, next) => {
+    try {
+        const updatedAssignment = await Assignment.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true});
+        return res.redirect(`/assignments/${updatedAssignment.id}`)
+    } catch (error) {
+        console.log(error); 
+        req.error = error;
+        return next();
+    }
 });
 
 //destroy
-router.delete("/:id", (req, res) => {
-    res.send({
-        message: "delete route works",
-        id: req.params.id,
-    });
+router.delete("/:id", async (req, res) => {
+    try {
+        await Assignment.findByIdAndDelete(req.params.id);
+        return res.redirect("/assignments");
+    } catch (error) {
+        console.log(error); 
+        req.error = error;
+        return next();
+    }
 });
 
 module.exports = router;

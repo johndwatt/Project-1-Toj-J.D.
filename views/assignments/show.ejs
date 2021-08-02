@@ -29,6 +29,18 @@
                     </div>
                   </div>
                 </div>
+            </div>
+            <div class="container">
+              <form
+              action="/assignments/<%= assignment.id %>/edit"
+              method="GET">
+                <button class="ui blue button" type="submit">Update Assignment</button>
+              </form>
+              <form
+              action="/assignments/<%= assignment.id %>?_method=DELETE"
+              method="POST">
+                <button class="ui red button" type="submit">Delete Assignment</button>
+              </form>
             </div>    
             <h2 class="ui header">Submissions</h2>
             <div class="ui cards">   
