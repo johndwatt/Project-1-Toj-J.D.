@@ -39,8 +39,18 @@ router.post("/", async (req, res, next) => {
 });
 
 //show
-router.get("/:id", (req, res) => {
-    res.send(`show route works with id: ${req.params.id}`);
+router.get("/:id", async (req, res) => {
+    try {
+        const foundAssignment = await Assignment.findById(req.params.id);
+        const context = {
+            assignment: foundAssignment,
+        }
+        return res.render("assignments/show", context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
 });
 
 //edit
