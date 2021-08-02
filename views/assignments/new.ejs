@@ -5,16 +5,16 @@
 </head>
 <body>
     <div class="ui left demo vertical inverted thin sidebar labeled icon menu">
-        <a class="item">
-            My assignments
+        <a class="item" href="/assignments">
+            My Assignments
           </a>
-          <a class="item">
-            Item 2
+          <a class="item" href="/assignments/new">
+            Create Assignment
           </a>
-          <a class="item">
-            Item 3
+          <a class="item" href="/submissions/new">
+            Create Submission
           </a>
-    </div>
+      </div>
     <div class="pusher">
         <header>
             <h1 class="ui header">First Header</h1>
@@ -46,11 +46,5 @@
             </div>
             <button class="ui green submit button" type="submit">Create Assignment</button>
         </form>
-<script>
-$('.toggler').on('click', function() {
-    $('.ui.labeled.icon.sidebar').sidebar('toggle');
-});
-
-</script>
 </body>
 </html>

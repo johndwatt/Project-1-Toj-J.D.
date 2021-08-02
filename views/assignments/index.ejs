@@ -2,17 +2,17 @@
 <html lang="en">
     <%- include('../partials/_head') %> 
 <body>
-    <div class="ui left demo vertical inverted thin sidebar labeled icon menu">
-        <a class="item">
-            My assignments
-          </a>
-          <a class="item">
-            Item 2
-          </a>
-          <a class="item">
-            Item 3
-          </a>
-    </div>
+  <div class="ui left demo vertical inverted thin sidebar labeled icon menu">
+    <a class="item" href="/assignments">
+        My Assignments
+      </a>
+      <a class="item" href="/assignments/new">
+        Create Assignment
+      </a>
+      <a class="item" href="/submissions/new">
+        Create Submission
+      </a>
+  </div>
     <div class="pusher">
         <header>
             <h1 class="ui header">First header</h1>
@@ -62,12 +62,5 @@
               </div>
             </div>
     </div>
-    <!-- FIXME: temporary until app.js connection is fixed-->
-<script>
-$('.toggler').on('click', function() {
-    $('.ui.labeled.icon.sidebar').sidebar('toggle');
-});
-
-</script>
 </body>
 </html>
