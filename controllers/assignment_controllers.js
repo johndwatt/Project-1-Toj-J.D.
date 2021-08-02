@@ -29,6 +29,7 @@ router.get("/:id", (req, res) => {
 //edit
 router.get("/:id/edit", (req, res) => {
     res.send(`edit route works with id: ${req.params.id}`);
+    //return res.render("assignments/edit");
 });
 
 //update
