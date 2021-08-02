@@ -54,9 +54,18 @@ router.get("/:id", async (req, res) => {
 });
 
 //edit
-router.get("/:id/edit", (req, res) => {
-    res.send(`edit route works with id: ${req.params.id}`);
-    //return res.render("assignments/edit");
+router.get("/:id/edit", async (req, res) => {
+    try {
+        const foundAssignment = await Assignment.findById(req.params.id);
+        const context = {
+            assignment: foundAssignment,
+        };
+        return res.render("assignments/edit", context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
 });
 
 //update
