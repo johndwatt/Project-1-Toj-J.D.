@@ -12,6 +12,7 @@ router.get("/new", (req, res) => {
   });
   
 //  create route - functional
+
 router.get("/", async (req,res, next) => {
     try {
     const createdSubmissions = await Submission.create(req.body);
@@ -22,6 +23,22 @@ router.get("/", async (req,res, next) => {
         };
         return res.render("submissions/new", context);
     } 
+});
+
+// show route 
+
+router.get("/:id", async (req, res, next) => {
+    try{
+        const foundSubmission = await Submission.findById(req.params.id);
+        const context = {
+            submission: foundSubmission,
+        };
+        return res.render("submissions/show", context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+      }
 });
 
 
