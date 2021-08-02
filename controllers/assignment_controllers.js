@@ -5,8 +5,18 @@ const { Assignment } = require("../models");
 
 
 //index
-router.get("/", (req, res) => {
-    return res.render("assignments/index");
+router.get("/", async (req, res, next) => {
+    try {
+        const allAssignments = await Assignment.find({});
+        const context = {
+            allAssignments
+        };
+        return res.render("assignments/index", context);
+    } catch (error){
+        console.log(error);
+        req.error = error;
+        return next();
+    }
 });
 
 //new
