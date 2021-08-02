@@ -28,7 +28,7 @@ router.get("/", async (req,res, next) => {
 // show route 
 
 router.get("/:id", async (req, res, next) => {
-    try{
+    try {
         const foundSubmission = await Submission.findById(req.params.id);
         const context = {
             submission: foundSubmission,
@@ -43,5 +43,37 @@ router.get("/:id", async (req, res, next) => {
 
 // update route
 
+router.get("/:id/edit", async (req, res, next) => {
+    try {
+        const foundItem = await Submission.findById(req.params.id);
+        const context = {
+            submission: foundItem,
+        };
+        return res.render("submissions/edit", context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+      } 
+});
 
+router.put("/:id", async (req, res, next) => {
+    try {
+        const updatedSubmission = await Submission.findByIdAndUpdate(req.params.id, 
+        {
+            $set: req.body,
+        },
+        {
+            new: true,
+        },
+    )
+        const context = {
+            submission: updatedSubmission,
+        };
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+      }
+});
 module.exports = router;
