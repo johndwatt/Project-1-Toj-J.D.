@@ -21,6 +21,7 @@ router.get("/", async (req, res, next) => {
 
 //new
 router.get("/new", (req, res) => {
+    const context = {};
     return res.render("assignments/new");
 });
 
