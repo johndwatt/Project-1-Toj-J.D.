@@ -12,77 +12,49 @@
         <title>Thematic LMS</title>
     </head>
     <body>
-        <div class="ui middle aligned center aligned grid">
-            <div class="column">
-              <h2 class="ui blue header">
-                <div class="content">
-                  Thematic LMS Sign-up
-                </div>
-              </h2>
-              <form class="ui large form">
-                <div class="ui stacked segment">
+        <div class="ui left demo vertical inverted thin sidebar labeled icon menu">
+            <a class="item">
+                My assignments
+              </a>
+              <a class="item">
+                Item 2
+              </a>
+              <a class="item">
+                Item 3
+              </a>
+        </div>
+        <div class="pusher">
+            <header>
+                <h1 class="ui header">First Header</h1>
+                <button class="ui button toggler">Menu</button>
+            </header>        
+            <div class="ui form">
+                <h3 class="ui header">Create New Assignment</h3>
                 <div class="field">
-                    <label for="name">Name</label>
-                    <div class="ui left icon input">
-                      <i class="pen icon"></i>
-                      <input 
-                      type="text" 
-                      name="name" 
-                      placeholder="Gloria Hernandez">
-                    </div>
-                  </div>
-                  <div class="field">
-                    <label for="email">Email</label>
-                    <div class="ui left icon input">
-                      <i class="user icon"></i>
-                      <input 
-                      type="text" 
-                      name="email" 
-                      placeholder="example@email.com">
-                    </div>
-                  </div>
-                  <div class="field">
-                    <label for="password">Password</label>
-                    <div class="ui left icon input">
-                      <i class="lock icon"></i>
-                      <input 
-                      type="password" 
-                      name="password" 
-                      placeholder="********">
-                    </div>
-                  </div>
-                  <div class="field">
-                    <label for="image">Profile Photo</label>
-                    <div class="ui left icon input">
-                      <i class="camera icon"></i>
-                      <input 
-                      type="text" 
-                      name="image" 
-                      placeholder="https://">
-                    </div>
-                  </div>
-                  <div class="field">
-                    <label for="instructor">Instructor/Student</label>
-                    <div class="ui selection dropdown">
-                        <input 
-                        type="hidden" 
-                        name="instructor">
-                        <i class="dropdown icon"></i>
-                        <div class="default text">Select one</div>
-                        <div class="menu">
-                            <div class="item" data-value="1">Instructor</div>
-                            <div class="item" data-value="0">Student</div>
-                        </div>
-                    </div>
+                    <label>Assignment Name</label>
+                    <input 
+                    type="text"
+                    name="name"
+                    placeholder="Project 1">
                 </div>
-                  <div class="ui fluid large blue submit button">Sign-up</div>
+                <div class="field">
+                    <label>Assignment Due Date</label>
+                    <input 
+                    type="date"
+                    name="dueDate">
                 </div>
-                <div class="ui error message"></div>
-              </form>
-              <div class="ui message">
-                Already signed up? <a href="#">Click Here</a>
-              </div>
-            </div>
-          </div>
+                <div class="field">
+                  <label>Assignment Content</label>
+                  <textarea
+                  name="content"
+                  placeholder="Assignment content goes here..."></textarea>
+                </div>
+                <div class="ui green submit button">Create Assignment</div>
+    <script>
+    $('.toggler').on('click', function() {
+	    $('.ui.labeled.icon.sidebar').sidebar('toggle');
+    });
+
+    </script>
     </body>
 </html>
