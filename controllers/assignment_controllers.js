@@ -3,6 +3,7 @@ const router = express.Router();
 
 const { Assignment } = require("../models");
 
+
 //index
 router.get("/", (req, res) => {
     return res.render("assignments/index");
