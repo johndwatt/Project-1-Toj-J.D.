@@ -43,6 +43,7 @@ app.use(require("./utils/logger"));
 app.use("/", controllers.auth);
 app.use("/assignments", controllers.assignment);
 
+app.use("/submissions", controllers.submission);
 
 // === Routes ===
 app.get("/", (req, res) => {
