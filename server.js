@@ -21,6 +21,19 @@ app.set("view engine", "ejs");
 
 // === Middleware ===
 
+app.use(
+    session({
+      store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/lms" }),
+      secret: "tacotaco123",
+      resave: false,
+      saveUninitialized: false,
+      cookie: {
+        maxAge: 1000 * 60 * 60 * 24 * 7 * 2,
+      },
+    })
+  );
+
+
 /* app.use((req, res, next) => {
     res.locals.user = req.session.currentUser;
     return next();
