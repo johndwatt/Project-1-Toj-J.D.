@@ -17,10 +17,7 @@
       </a>
   </div>
     <div class="pusher">
-        <header>
-            <h1 class="ui header">First header</h1>
-            <button class="ui button toggler">Menu</button>
-        </header>        
+      <%- include('../partials/_header') %>         
         <div class="ui cards">
           <% for(let i = 0; i < assignments.length; i++){ %>
               <% const assignment = assignments[i] %>
