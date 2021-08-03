@@ -46,6 +46,25 @@
               </form>
             </div>    
             <h2 class="ui header">Submissions</h2>
+            <% submissions.forEach(submission => { %>
+              <div class="ui cards">   
+                <div class="card">
+                  <div class="content">
+                    <div class="ui top attached label">HTML</div>
+                    <div class="header"><%= submission.studentName %></div>
+                    <div class="description">
+                      <%= submission.submissionDate %>
+                    </div>
+                    <div class="description">
+                      <%= submission.file %>
+                    </div>
+                  </div>
+                  <div class="ui bottom attached button">
+                    <i class="add icon"></i>
+                    <a href="/submissions/<% submission.id %>">View Submission</a>
+                  </div>
+                </div>
+            <% }) %> 
             <div class="ui cards">   
                 <div class="card">
                   <div class="content">
