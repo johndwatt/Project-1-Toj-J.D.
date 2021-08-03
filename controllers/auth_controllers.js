@@ -13,7 +13,24 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-    res.send("login post route works");
+    try {
+        const foundUser = await User.findOne({ email: req.body.email });
+        if (!foundUser) {
+            return res.redirect("/signup");
+        };
+        const match = await bcrypt.compare(req.body.password, foundUser.password);
+        if (!match) {
+            return res.send("Incorrect email or password");
+        };
+        req.session.currentUser = {
+            id: foundUser._id,
+            name: foundUser.name,
+        };
+        return res.redirect("/assignments");
+    } catch (error) {
+        console.log(error);
+        return res.send(error);
+    }
 });
 
 router.post("/signup", async (req, res) => {
@@ -21,7 +38,7 @@ router.post("/signup", async (req, res) => {
         const foundUser = await User.exists({ email: req.body.email });
         if (foundUser) {
             return res.redirect("/login");
-        }
+        };
         const salt = await bcrypt.genSalt(10);
         const hash = await bcrypt.hash(req.body.password, salt);
         req.body.password = hash;
