@@ -21,12 +21,22 @@ app.set("view engine", "ejs");
 
 // === Middleware ===
 
-/* app.use((req, res, next) => {
+app.use(
+    session({
+      store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/lms" }),
+      secret: "tacotaco123",
+      resave: false,
+      saveUninitialized: false,
+      cookie: {
+        maxAge: 1000 * 60 * 60 * 24 * 7 * 2,
+      },
+    })
+  );
+
+app.use((req, res, next) => {
     res.locals.user = req.session.currentUser;
     return next();
 }); 
-this also brakes nodemon - please do not add middleware that is not actively being used
-*/
 
 //app.use(require("./utils/navlinks")); //this breaks nodemon, please check and fix
 
