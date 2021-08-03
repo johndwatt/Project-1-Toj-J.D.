@@ -12,7 +12,7 @@ router.get("/signup", (req, res) => {
     return res.render("auth/signup");
 });
 
-router.post("/login", (req, res) => {
+router.post("/login", async (req, res) => {
     try {
         const foundUser = await User.findOne({ email: req.body.email });
         if (!foundUser) {
@@ -50,8 +50,14 @@ router.post("/signup", async (req, res) => {
     }
 });
 
-router.get("/logout", (req, res) => {
-    res.send("logout route works");
+router.get("/logout", async (req, res) => {
+    try {
+        await req.session.destroy();
+        return res.redirect("/login");
+    } catch (error) {
+        console.log(error);
+        return res.send(error);
+    }
 });
 
 module.exports = router;
