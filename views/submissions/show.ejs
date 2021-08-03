@@ -17,15 +17,12 @@
           </a>
       </div>
         <div class="pusher">
-            <header>
-                <h1 class="ui header">First header</h1>
-                <button class="ui button toggler">Menu</button>
-            </header>        
+          <%- include('../partials/_header') %>       
             <h2 class="ui header">Your Submission</h2>
             <div class="ui cards">   
                 <div class="card">
                   <div class="content">
-                    <div class="ui top attached label">HTML</div>
+                    <div class="ui top attached label">Submission Date: <%= submission.submissionDate %></div>
                     <div class="header"><%= submission.studentName %></div>
                     <div class="description">
                       <%= submission.submissionDate %>
@@ -34,26 +31,37 @@
                       <%= submission.file %>
                     </div>
                   </div>
-                  <div class="ui bottom attached button">
-                    <i class="add icon"></i>
-                    View Submission
+                </div>
+            </div>
+            <div class="container">
+              <form
+              action="/submissions/<%= submission.id %>/edit"
+              method="GET">
+                <button class="ui blue button" type="submit">Update Submission</button>
+              </form>
+              <form
+              action="/submissions/<%= submission.id %>?_method=DELETE"
+              method="POST">
+                <button class="ui red button" type="submit">Delete Submission</button>
+              </form>
+            </div>
+
+            <h2 class="ui header">For This Assignment</h2>
+            <div class="ui cards">
+              <div class="card">
+                <div class="content">
+                  <div class="ui top attached label"><%= assignment.dueDate %></div>
+                  <div class="header"><%= assignment.name %></div>
+                  <div class="description">
+                    <%= assignment.content %>
                   </div>
                 </div>
-                
-                <div class="container">
-                  <form
-                  action="/submissions/<%= submission.id %>/edit"
-                  method="GET">
-                    <button class="ui blue button" type="submit">Update Submission</button>
-                  </form>
-                  <form
-                  action="/submissions/<%= submission.id %>?_method=DELETE"
-                  method="POST">
-                    <button class="ui red button" type="submit">Delete Submission</button>
-                  </form>
-                </div>  
-            </div>
-            <h2 class="ui header">For This Assignment</h2> 
-            </div>    
+                <div class="ui bottom attached button">
+                  <i class="add icon"></i>
+                  <a href="/assignments/<%= assignment.id %>">View Assignment</a>
+                </div>
+              </div>
+          </div>
+        </div>    
     </body>
 </html>   

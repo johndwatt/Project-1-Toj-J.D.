@@ -1,25 +1,36 @@
 const express = require("express");
 const router = express.Router();
 
-const { Submission } = require("../models");
+const { Submission, Assignment } = require("../models");
 
 
 // new route - presentational
 
-router.get("/new", (req, res) => {
-    const context = {};
-    return res.render("submissions/new");
+router.get("/new", async (req, res) => {
+    try {
+        const allAssignments = await Assignment.find({});
+        const context = {
+            assignments: allAssignments,
+        };
+        return res.render("submissions/new", context);   
+    } catch (error){
+        const context = {
+            error,
+        };
+        return res.render("submissions/new", context);
+    }
+
   });
   
 //  create route - functional
 
 router.post("/", async (req,res, next) => {
     try {
-    const createdSubmissions = await Submission.create(req.body);
-    return res.redirect(`/submissions/${createdSubmissions.id}`);
+        const createdSubmissions = await Submission.create(req.body);
+        return res.redirect(`/submissions/${createdSubmissions.id}`);
     } catch (error) {
-    const context = {
-        error,
+        const context = {
+            error,
         };
         return res.render("submissions/new", context);
     } 
@@ -30,8 +41,10 @@ router.post("/", async (req,res, next) => {
 router.get("/:id", async (req, res, next) => {
     try {
         const foundSubmission = await Submission.findById(req.params.id);
+        const foundAssignment = await Assignment.findById( foundSubmission.assignmentId);
         const context = {
             submission: foundSubmission,
+            assignment: foundAssignment,
         };
         return res.render("submissions/show", context);
     } catch (error) {

@@ -19,10 +19,7 @@
           </a>
       </div>
         <div class="pusher">
-            <header>
-                <h1 class="ui header">First Header</h1>
-                <button class="ui button toggler">Menu</button>
-            </header>  
+          <%- include('../partials/_header') %> 
                 <h3 class="ui header">Create Submission</h3>
                 <form class="ui form" action="/submissions" method="POST">
                   <% if (typeof error !== "undefined") { %>
@@ -39,8 +36,22 @@
                   <label>File Upload</label>
                   <input
                   type="file"
-                  placeholder="File Upload"></input>
+                  name="file"
+                  placeholder="File Upload"></input> 
                 </div>
+                <div class="field">
+                  <label>Assignment</label>
+                  <select name="assignmentId">
+                    <option default>Select your Assignment</option>
+                    <% for (let i = 0; i < assignments.length; i++) {%>
+                    <% const assignment = assignments[i] %>
+                    <option value="<%= assignment._id %>">
+                      <%= assignment.name %>
+                    </option>
+                    <% } %>
+                  </select>
+                </div>
+
                 <button class="ui teal submit button" type="submit">Submit Assignment</button>
                 </form>
     </body>

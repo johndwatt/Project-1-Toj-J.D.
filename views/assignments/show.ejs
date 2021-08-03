@@ -17,10 +17,7 @@
           </a>
       </div>
         <div class="pusher">
-            <header>
-                <h1 class="ui header">First header</h1>
-                <button class="ui button toggler">Menu</button>
-            </header>        
+          <%- include('../partials/_header') %>       
            <h2 class="ui header">Assignment</h2> 
            <div class="ui cards">
                 <div class="card">
@@ -46,33 +43,31 @@
               </form>
             </div>    
             <h2 class="ui header">Submissions</h2>
-            <div class="ui cards">   
+            <form
+            action="/submissions/new"
+            method="GET">
+              <button class="ui teal button" type="submit">Create Submission</button>
+            </form>
+            <% for(let i = 0; i < submissions.length; i++){ %>
+              <% const submission = submissions[i] %>
+              <div class="ui cards">   
                 <div class="card">
                   <div class="content">
                     <div class="ui top attached label">HTML</div>
-                    <div class="header">Submission 1</div>
+                    <div class="header"><%= submission.studentName %></div>
                     <div class="description">
-                        file here
+                      <%= submission.submissionDate %>
+                    </div>
+                    <div class="description">
+                      <%= submission.file %>
                     </div>
                   </div>
                   <div class="ui bottom attached button">
                     <i class="add icon"></i>
-                    View Submission
+                    <a href="/submissions/<%= submission.id %>">View Submission</a>
                   </div>
                 </div>
-                <div class="card">
-                    <div class="content">
-                      <div class="ui top attached label">HTML</div>
-                      <div class="header">Submission 1</div>
-                      <div class="description">
-                          file here
-                      </div>
-                    </div>
-                    <div class="ui bottom attached button">
-                      <i class="add icon"></i>
-                      View Submission
-                    </div>
-                  </div>
+            <% } %> 
         </div>
     </body>
 </html>
