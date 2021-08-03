@@ -46,7 +46,11 @@
               </form>
             </div>    
             <h2 class="ui header">Submissions</h2>
-            
+            <form
+            action="/submissions/new"
+            method="GET">
+              <button class="ui teal button" type="submit">Create Submission</button>
+            </form>
             <% for(let i = 0; i < submissions.length; i++){ %>
               <% const submission = submissions[i] %>
               <div class="ui cards">   
