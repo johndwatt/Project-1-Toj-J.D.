@@ -86,6 +86,7 @@ router.put("/:id", async (req, res, next) => {
 router.delete("/:id", async (req, res) => {
     try {
         await Assignment.findByIdAndDelete(req.params.id);
+        await Submission.deleteMany({ assignmentId: req.params.id });
         return res.redirect("/assignments");
     } catch (error) {
         console.log(error); 
