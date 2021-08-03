@@ -46,7 +46,8 @@
               </form>
             </div>    
             <h2 class="ui header">Submissions</h2>
-            <% submissions.forEach(submission => { %>
+            <% for(let i = 0; i < submissions.length; i++){ %>
+              <% const submission = submissions[i] %>
               <div class="ui cards">   
                 <div class="card">
                   <div class="content">
@@ -61,10 +62,10 @@
                   </div>
                   <div class="ui bottom attached button">
                     <i class="add icon"></i>
-                    <a href="/submissions/<% submission.id %>">View Submission</a>
+                    <a href="/submissions/<%submission._id%>/">View Submission</a>
                   </div>
                 </div>
-            <% }) %> 
+            <% } %> 
             <div class="ui cards">   
                 <div class="card">
                   <div class="content">

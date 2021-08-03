@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { Assignment } = require("../models");
+const { Assignment, Submission } = require("../models");
 
 
 //index
@@ -42,8 +42,10 @@ router.post("/", async (req, res, next) => {
 router.get("/:id", async (req, res) => {
     try {
         const foundAssignment = await Assignment.findById(req.params.id);
+        const allSubmissions = await Submission.find({ assignmentId: req.params.id });
         const context = {
             assignment: foundAssignment,
+            submissions: allSubmissions,
         }
         return res.render("assignments/show", context);
     } catch (error) {

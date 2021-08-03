@@ -1,14 +1,17 @@
 const express = require("express");
 const router = express.Router();
 
-const { Submission } = require("../models");
+const { Submission, Assignment } = require("../models");
 
 
 // new route - presentational
 
-router.get("/new", (req, res) => {
-    const context = {};
-    return res.render("submissions/new");
+router.get("/new", async (req, res) => {
+    const allAssignments = await Assignment.find({});
+    const context = {
+        assignments: allAssignments,
+    };
+    return res.render("submissions/new", context);
   });
   
 //  create route - functional
