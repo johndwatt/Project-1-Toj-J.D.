@@ -5,10 +5,12 @@ const fs = require('fs');
 const util = require('util');
 const removeFile = util.promisify(fs.unlink)
 
+const { Submission, Assignment } = require("../models");
+
 const handleUploadFile = async (req, res, next) => {
   try {
     const file = req.file;
-    console.log({file});
+   
     const validType = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.openxmlformats-officedocument.wordprocessingml.template", "application/vnd.ms-powerpoint", "application/vnd.openxmlformats-officedocument.presentationml.presentation", "image/gif", "image/jpeg", "image/png", "application/vnd.ms-excel.sheet.macroEnabled.12"];
 
     if (validType.includes(file.mimetype)) {
@@ -23,8 +25,11 @@ const handleUploadFile = async (req, res, next) => {
         throw error;
     }
   } catch (error) {
+    await removeFile(req.file.path);  
+    const allAssignments = await Assignment.find({});
     const context = {
-      error,
+      error, 
+      assignments: allAssignments,
     };
 
     return res.render("submissions/new", context);
