@@ -19,11 +19,10 @@ class BucketS3 {
   
     uploadFile (file) {
       const filePath = fs.createReadStream(file.path);
-  
       const uploadParams = {
         Bucket: this.#bucketName,
         Body: filePath,
-        Key: `${file.originalname}-${uuid.v4()}`
+        Key: `${uuid.v4()}-${file.originalname}`
       }
   
       return this.#s3.upload(uploadParams).promise();
