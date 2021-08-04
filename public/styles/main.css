@@ -31,7 +31,7 @@ section.container {
 }
 
 /* issues with this! keep working on it!!! */
-@media (min-width: 480px) {
+@media (min-width: 700px) {
     main {
         flex-direction: row;
     }
