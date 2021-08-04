@@ -21,7 +21,7 @@
         <div class="pusher">
           <%- include('../partials/_header') %>         
               <h2 class="heading ui header">Update Submission</h2>
-              <form class="cust-form ui form" action="/submissions/<%= submission.id%>?_method=PUT"  method="POST">
+              <form class="cust-form ui form" action="/submissions/<%= submission.id%>?_method=PUT"  method="POST" enctype="multipart/form-data">
                   <% if (typeof error !== "undefined") { %>
                       <%= error.message %> 
                   <% } %> 
@@ -39,7 +39,7 @@
                   type="file"
                   name="file"
                   placeholder="File Upload"
-                  value= "<%= submission.file %>"></input> 
+                  value= "<%= submission.file %>"> 
                 </div>
                 <div class="container">
                   <button class="ui blue submit button" type="submit">Update submission</button>
