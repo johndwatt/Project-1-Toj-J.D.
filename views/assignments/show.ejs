@@ -18,7 +18,7 @@
       </div>
         <div class="pusher">
           <%- include('../partials/_header') %>       
-           <h2 class="ui header">Assignment</h2> 
+           <h2 class="heading ui header">Assignment</h2> 
            <div class="ui cards">
                 <div class="card">
                   <div class="content">
@@ -30,7 +30,7 @@
                   </div>
                 </div>
             </div>
-            <div class="container">
+            <div class="btn-flex container">
               <form
               action="/assignments/<%= assignment.id %>/edit"
               method="GET">
@@ -42,7 +42,7 @@
                 <button class="ui red button" type="submit">Delete</button>
               </form>
             </div>    
-            <h2 class="ui header">Submissions</h2>
+            <h2 class="heading ui header">Submissions</h2>
             <form
             action="/submissions/new"
             method="GET">

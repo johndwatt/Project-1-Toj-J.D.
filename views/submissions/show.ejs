@@ -17,7 +17,9 @@
           </a>
       </div>
         <div class="pusher">
-          <%- include('../partials/_header') %>       
+          <%- include('../partials/_header') %>
+          <main>
+          <section class="container">
             <h2 class="ui header">Your Submission</h2>
             <div class="ui cards">   
                 <div class="card">
@@ -33,19 +35,20 @@
                   </div>
                 </div>
             </div>
-            <div class="container">
+            <div class="btn-flex container">
               <form
               action="/submissions/<%= submission.id %>/edit"
               method="GET">
-                <button class="ui blue button" type="submit">Update Submission</button>
+                <button class="ui blue button" type="submit">Update</button>
               </form>
               <form
               action="/submissions/<%= submission.id %>?_method=DELETE"
               method="POST">
-                <button class="ui red button" type="submit">Delete Submission</button>
+                <button class="ui red button" type="submit">Delete</button>
               </form>
             </div>
-
+          </section>
+          <section class="container">
             <h2 class="ui header">For This Assignment</h2>
             <div class="ui cards">
               <div class="card">
@@ -61,7 +64,9 @@
                   <a href="/assignments/<%= assignment.id %>">View Assignment</a>
                 </div>
               </div>
-          </div>
-        </div>    
+            </div>
+          </section>
+        </main>
+      </div>  
     </body>
 </html>   

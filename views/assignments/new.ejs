@@ -20,8 +20,8 @@
       </div>
     <div class="pusher">
       <%- include('../partials/_header') %> 
-        <h2 class="ui header">Create New Assignment</h2>        
-            <form class="ui form" action="/assignments" method="POST">
+        <h2 class="heading ui header">Create New Assignment</h2>        
+            <form class="cust-form ui form" action="/assignments" method="POST">
             <% if (typeof error !== "undefined") { %>
                 <%= error.message %> 
             <% } %> 

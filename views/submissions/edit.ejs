@@ -20,8 +20,8 @@
       </div>
         <div class="pusher">
           <%- include('../partials/_header') %>         
-              <h2 class="ui header">Update Submission</h2>
-              <form class="ui form" action="/submissions/<%= submission.id%>?_method=PUT"  method="POST">
+              <h2 class="heading ui header">Update Submission</h2>
+              <form class="cust-form ui form" action="/submissions/<%= submission.id%>?_method=PUT"  method="POST">
                   <% if (typeof error !== "undefined") { %>
                       <%= error.message %> 
                   <% } %> 
@@ -42,7 +42,7 @@
                   value= "<%= submission.file %>"></input> 
                 </div>
                 <div class="container">
-                  <button class="ui blue submit button" type="submit">Submit Assignment</button>
+                  <button class="ui blue submit button" type="submit">Update submission</button>
                   <button class="ui red cancel button" type="submit">Cancel</button>
                 </div>
               </form>     
