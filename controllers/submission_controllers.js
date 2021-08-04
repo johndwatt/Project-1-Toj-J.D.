@@ -28,9 +28,7 @@ router.get("/new", async (req, res) => {
 
 router.post("/", handleUploadFile, async (req,res, next) => {
     try {
-        console.log("req.body", req.body);
         const createdSubmissions = await Submission.create(req.body);
-        console.log("createdSubmissions", createdSubmissions);
         return res.redirect(`/submissions/${createdSubmissions._id}`);
     } catch (error) {
         const allAssignments = await Assignment.find({});
@@ -38,7 +36,6 @@ router.post("/", handleUploadFile, async (req,res, next) => {
             error, 
             assignments: allAssignments,
         };
-        console.log("error", error);
         return res.render("submissions/new", context);
     } 
 });
