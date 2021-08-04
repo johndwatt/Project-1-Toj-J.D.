@@ -1,4 +1,6 @@
-const buckectS3 = require('../config/aws.connection'); 
+// got from adonis
+
+const buckectS3 = require('../configuration/aws.connection'); 
 const fs = require('fs');
 const util = require('util');
 const removeFile = util.promisify(fs.unlink)
@@ -8,7 +10,7 @@ const handleUploadFile = async (req, res, next) => {
     const file = req.file;
     const result = await buckectS3.uploadFile(file);
     await removeFile(file.path);
-    req.body.image = result.Location;
+    req.body.file = result.Location;
 
     next();
   } catch (error) {

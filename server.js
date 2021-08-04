@@ -48,7 +48,9 @@ app.use((req, res, next) => {
 
 app.use(express.static("public"));
 
-app.use(upload.single("image"));
+// multer calls for file 
+
+app.use(upload.single("file"));
 
 // NOTE allow body data for all routes
 app.use(express.urlencoded({ extended: true }));
