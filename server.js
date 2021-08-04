@@ -7,6 +7,12 @@ const session = require("express-session");
 
 const MongoStore = require("connect-mongo");
 
+const multer = require("multer");
+
+const upload = multer({dest: "uploads/"});
+
+require("dotenv").config();
+
 // === Internal Modules ===
 const controllers = require("./controllers/index");
 
@@ -41,6 +47,8 @@ app.use((req, res, next) => {
 //app.use(require("./utils/navlinks")); //this breaks nodemon, please check and fix
 
 app.use(express.static("public"));
+
+app.use(upload.single("image"));
 
 // NOTE allow body data for all routes
 app.use(express.urlencoded({ extended: true }));
