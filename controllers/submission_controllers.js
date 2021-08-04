@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const { Submission, Assignment } = require("../models");
+const handleUploadFile = require('../utils/handleUploadFile');
 
 
 // new route - presentational
@@ -24,7 +25,7 @@ router.get("/new", async (req, res) => {
   
 //  create route - functional
 
-router.post("/", async (req,res, next) => {
+router.post("/", handleUploadFile, async (req,res, next) => {
     try {
         const createdSubmissions = await Submission.create(req.body);
         return res.redirect(`/submissions/${createdSubmissions.id}`);
