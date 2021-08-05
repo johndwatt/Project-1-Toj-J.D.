@@ -3,7 +3,6 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const { User } = require("../models");
 
-//index - login
 router.get("/login", (req, res) => {
     return res.render("auth/login");
 });

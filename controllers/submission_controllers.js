@@ -10,7 +10,6 @@ const handleUploadFile = require('../utils/handleUploadFile');
 router.get("/new", async (req, res) => {
     try {
         const allAssignments = await Assignment.find({});
-        console.log("allAssignments", allAssignments);
         const context = {
             assignments: allAssignments,
         };

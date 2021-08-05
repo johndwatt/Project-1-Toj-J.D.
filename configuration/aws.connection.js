@@ -1,5 +1,3 @@
-// got from adonis
-
 const AWS = require('aws-sdk');
 const fs = require('fs');
 const uuid = require('uuid');

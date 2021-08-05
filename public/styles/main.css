@@ -1,6 +1,5 @@
 body {
     background-color: #f9f9f9;
-
 }
 
 body.pushable>.pusher {
@@ -68,6 +67,10 @@ section.container {
 
 #bottom-btn {
     margin-bottom: 15px;
+}
+
+#hide {
+    display: none;
 }
 
 @media (min-width: 500px) {

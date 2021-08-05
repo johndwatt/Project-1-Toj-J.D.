@@ -3,7 +3,6 @@ const router = express.Router();
 
 const { Assignment, Submission } = require("../models");
 
-
 //index
 router.get("/", async (req, res, next) => {
     try {
