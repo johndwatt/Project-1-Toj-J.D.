@@ -1,0 +1,21 @@
+:root {
+    --primary: #f9f9f9;
+}
+
+body {
+    background: var(--primary);  
+}
+
+body.pushable>.pusher {
+    background: var(--primary);
+}
+
+button.ele-col.ui.button {
+    background-color: var(--primary);
+    filter: brightness(90%);
+}
+
+div.ele-col.ui {
+    background-color: var(--primary);
+    filter: brightness(90%);
+} 
