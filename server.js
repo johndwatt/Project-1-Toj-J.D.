@@ -30,7 +30,7 @@ app.set("view engine", "ejs");
 app.use(
     session({
       store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI || "mongodb://localhost:27017/lms" }),
-      secret: "tacotaco123",
+      secret: process.env.SECRET,
       resave: false,
       saveUninitialized: false,
       cookie: {
@@ -59,11 +59,18 @@ app.use(methodOverride("_method"));
 
 app.use(require("./utils/logger"));
 
+const authRequired = (req,res,next) => {
+  if(!req.session.currentUser){
+    return res.redirect("/login");
+  }
+  next();
+}
+
 app.use("/", controllers.auth);
 
-app.use("/assignments", controllers.assignment);
+app.use("/assignments", authRequired, controllers.assignment);
 
-app.use("/submissions", controllers.submission);
+app.use("/submissions", authRequired, controllers.submission);
 
 // === Routes ===
 app.get("/", (req, res) => {
