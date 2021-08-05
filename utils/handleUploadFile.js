@@ -1,5 +1,3 @@
-// got from adonis
-
 const buckectS3 = require('../configuration/aws.connection'); 
 const fs = require('fs');
 const util = require('util');
