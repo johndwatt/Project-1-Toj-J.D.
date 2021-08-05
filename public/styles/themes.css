@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: var(--primary);
+    background: var(--primary);  
 }
 
 body.pushable>.pusher {
