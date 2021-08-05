@@ -3,11 +3,11 @@
 }
 
 body {
-    background: var(--primary);  
+    background: linear-gradient(to right, var(--primary), #f9f9f9);
 }
 
 body.pushable>.pusher {
-    background: var(--primary);
+    background: linear-gradient(to right, var(--primary), #f9f9f9);
 }
 
 button.ele-col.ui.button {
