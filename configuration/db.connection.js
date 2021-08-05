@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const connectionString = "mongodb://localhost:27017/lms"; 
+require("dotenv").config();
+const connectionString = process.env.MONGODB_URI; /* || "mongodb://localhost:27017/lms";  */
 
 mongoose.connect(connectionString, {
     useCreateIndex: true,
