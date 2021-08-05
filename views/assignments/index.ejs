@@ -13,13 +13,13 @@
               <% const assignment = assignments[i] %>
               <div class="ui card">
                 <div class=" content">
-                  <div class="ui top attached label"><%= assignment.dueDate %> </div>
+                  <div class="ele-col ui top attached label"><%= assignment.dueDate %> </div>
                   <div class="header"><%= assignment.name %></div>
                   <div class="description">
                     <%= assignment.content %>
                   </div>
                 </div>
-                <button class="assignment ui bottom attached button">
+                <button class="assignment ele-col ui bottom attached button">
                   <i class="add icon"></i>
                   <a href="/assignments/<%= assignment.id %>">View Assignment</a>
                 </button>

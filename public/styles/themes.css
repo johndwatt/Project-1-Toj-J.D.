@@ -1,6 +1,5 @@
 :root {
     --primary: #f9f9f9;
-    --secondary: #E8E8E8;
 }
 
 body {
@@ -12,9 +11,11 @@ body.pushable>.pusher {
 }
 
 button.ele-col.ui.button {
-    background-color: var(--secondary);
+    background-color: var(--primary);
+    filter: brightness(90%);
 }
 
-div.ele-col {
-    background-color: var(--secondary);
+div.ele-col.ui {
+    background-color: var(--primary);
+    filter: brightness(90%);
 } 

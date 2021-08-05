@@ -13,7 +13,7 @@
            <div class="ui cards">
                 <div id="assignment-show" class="card">
                   <div class="content">
-                    <div class="ui top attached label"><%= assignment.dueDate %></div>
+                    <div class="ele-col ui top attached label"><%= assignment.dueDate %></div>
                     <div class="header"><%= assignment.name %></div>
                     <div class="description">
                       <%= assignment.content %>
@@ -46,7 +46,7 @@
               <% const submission = submissions[i] %>
                 <div class="card">
                   <div class="content">
-                    <div class="ui top attached label">HTML</div>
+                    <div class="ele-col ui top attached label">HTML</div>
                     <div class="header"><%= submission.studentName %></div>
                     <div class="description">
                       <%= submission.submissionDate %>
@@ -55,7 +55,7 @@
                       <a href="<%= submission.file %>">Download Submission File</a>
                     </div>
                   </div>
-                  <div class="ui bottom attached button">
+                  <div class="ele-col ui bottom attached button">
                     <i class="add icon"></i>
                     <a href="/submissions/<%= submission.id %>">View Submission</a>
                   </div>
