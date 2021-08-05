@@ -19,11 +19,11 @@
     <div class="pusher">
       <%- include('../partials/_header') %>
       <h2 id="heading" class="heading ui header">Assignments</h2> 
-        <div class="ui cards">
+        <div class="assignment ui cards">
           <% for(let i = 0; i < assignments.length; i++){ %>
               <% const assignment = assignments[i] %>
               <div class="card">
-                <div class="content">
+                <div class=" content">
                   <div class="ui top attached label"><%= assignment.dueDate %> </div>
                   <div class="header"><%= assignment.name %></div>
                   <div class="description">

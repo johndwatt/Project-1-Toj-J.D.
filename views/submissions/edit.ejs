@@ -42,8 +42,8 @@
                   value= "<%= submission.file %>"> 
                 </div>
                 <div class="container">
-                  <button class="ui blue submit button" type="submit">Update submission</button>
-                  <button class="ui red cancel button" type="submit">Cancel</button>
+                  <button id="bottom-btn" class="ui blue submit button" type="submit">Update submission</button>
+                  <a href="/submissions/<%= submission.id %>" class="ui red cancel button" >Cancel</a>
                 </div>
               </form>     
     </body>

@@ -44,7 +44,10 @@
                   name="content"
                   placeholder="Assignment content goes here..."><%= assignment.content %></textarea>
                 </div>
-                <button class="ui blue submit button" type="submit">Update Assignment</button>
+                <div class="container">
+                  <button id="bottom-btn" class="ui blue submit button" type="submit">Update Assignment</button>
+                  <a href="/assignments/<%= assignment.id %>" class="ui red cancel button" >Cancel</a>
+                </div>
             </form>
     </body>
 </html>
