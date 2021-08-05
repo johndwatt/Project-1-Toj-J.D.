@@ -22,7 +22,7 @@
         <div class="assignment ui cards">
           <% for(let i = 0; i < assignments.length; i++){ %>
               <% const assignment = assignments[i] %>
-              <div class="card">
+              <div class="ui card">
                 <div class=" content">
                   <div class="ui top attached label"><%= assignment.dueDate %> </div>
                   <div class="header"><%= assignment.name %></div>
@@ -30,10 +30,10 @@
                     <%= assignment.content %>
                   </div>
                 </div>
-                <div class="ui bottom attached button">
+                <button class="assignment ui bottom attached button">
                   <i class="add icon"></i>
                   <a href="/assignments/<%= assignment.id %>">View Assignment</a>
-                </div>
+                </button>
               </div> 
           <% } %> 
     </div>

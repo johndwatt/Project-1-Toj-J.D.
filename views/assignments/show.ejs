@@ -52,9 +52,9 @@
             method="GET">
               <button id="bottom-btn" class="ui teal button" type="submit">Create Submission</button>
             </form>
+            <div class="ui cards">
             <% for(let i = 0; i < submissions.length; i++){ %>
               <% const submission = submissions[i] %>
-              <div class="ui cards">   
                 <div class="card">
                   <div class="content">
                     <div class="ui top attached label">HTML</div>
@@ -72,6 +72,7 @@
                   </div>
                 </div>
             <% } %> 
+            </div>
           </section> 
         </main>  
       </div>

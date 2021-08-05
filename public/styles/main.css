@@ -21,6 +21,11 @@ section.container {
     margin: 15px;
 }
 
+.assignment.ui.bottom.attached.button {
+    position: absolute;
+    margin-top: 93%;
+}
+
 .btn-flex.container {
     display: flex;
     margin: 10px 0;
@@ -29,6 +34,7 @@ section.container {
 .assignment.ui.cards {
     margin: 10px;
     justify-content: center;
+    gap: 15px;
 }
 
 .assignment.ui.cards .card {
