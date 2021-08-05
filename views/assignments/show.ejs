@@ -3,24 +3,15 @@
     <%- include('../partials/_head') %> 
     <body>
       <div class="ui left demo vertical inverted thin sidebar labeled icon menu">
-        <a class="item" href="/assignments">
-            My Assignments
-          </a>
-          <a class="item" href="/assignments/new">
-            Create Assignment
-          </a>
-          <a class="item" href="/submissions/new">
-            Create Submission
-          </a>
-          <a class="item" href="/logout">
-            Logout
-          </a>
+        <%- include('../partials/_sidebar-links') %>
       </div>
         <div class="pusher">
-          <%- include('../partials/_header') %>       
-           <h2 class="heading ui header">Assignment</h2> 
+          <%- include('../partials/_header') %>
+          <main class="show">
+          <section class="container">    
+           <h2 class="ui header">Assignment</h2> 
            <div class="ui cards">
-                <div class="card">
+                <div id="assignment-show" class="card">
                   <div class="content">
                     <div class="ui top attached label"><%= assignment.dueDate %></div>
                     <div class="header"><%= assignment.name %></div>
@@ -41,16 +32,18 @@
               method="POST">
                 <button class="ui red button" type="submit">Delete</button>
               </form>
-            </div>    
-            <h2 class="heading ui header">Submissions</h2>
+            </div>
+            </section>
+            <section class="container">   
+            <h2 class="ui header">Submissions</h2>
             <form
             action="/submissions/new"
             method="GET">
-              <button class="ui teal button" type="submit">Create Submission</button>
+              <button id="bottom-btn" class="ui teal button" type="submit">Create Submission</button>
             </form>
+            <div class="ui cards">
             <% for(let i = 0; i < submissions.length; i++){ %>
               <% const submission = submissions[i] %>
-              <div class="ui cards">   
                 <div class="card">
                   <div class="content">
                     <div class="ui top attached label">HTML</div>
@@ -59,7 +52,7 @@
                       <%= submission.submissionDate %>
                     </div>
                     <div class="description">
-                      <%= submission.file %>
+                      <a href="<%= submission.file %>">Download Submission File</a>
                     </div>
                   </div>
                   <div class="ui bottom attached button">
@@ -68,6 +61,9 @@
                   </div>
                 </div>
             <% } %> 
-        </div>
+            </div>
+          </section> 
+        </main>  
+      </div>
     </body>
 </html>

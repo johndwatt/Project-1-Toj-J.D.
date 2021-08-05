@@ -3,37 +3,26 @@
     <%- include('../partials/_head') %> 
 <body>
   <div class="ui left demo vertical inverted thin sidebar labeled icon menu">
-    <a class="item" href="/assignments">
-        My Assignments
-      </a>
-      <a class="item" href="/assignments/new">
-        Create Assignment
-      </a>
-      <a class="item" href="/submissions/new">
-        Create Submission
-      </a>
-      <a class="item" href="/logout">
-        Logout
-      </a>
+    <%- include('../partials/_sidebar-links') %> 
   </div>
     <div class="pusher">
       <%- include('../partials/_header') %>
       <h2 id="heading" class="heading ui header">Assignments</h2> 
-        <div class="ui cards">
+        <div class="assignment ui cards">
           <% for(let i = 0; i < assignments.length; i++){ %>
               <% const assignment = assignments[i] %>
-              <div class="card">
-                <div class="content">
+              <div class="ui card">
+                <div class=" content">
                   <div class="ui top attached label"><%= assignment.dueDate %> </div>
                   <div class="header"><%= assignment.name %></div>
                   <div class="description">
                     <%= assignment.content %>
                   </div>
                 </div>
-                <div class="ui bottom attached button">
+                <button class="assignment ui bottom attached button">
                   <i class="add icon"></i>
                   <a href="/assignments/<%= assignment.id %>">View Assignment</a>
-                </div>
+                </button>
               </div> 
           <% } %> 
     </div>

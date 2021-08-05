@@ -5,18 +5,7 @@
 </head>
 <body>
     <div class="ui left demo vertical inverted thin sidebar labeled icon menu">
-        <a class="item" href="/assignments">
-            My Assignments
-          </a>
-          <a class="item" href="/assignments/new">
-            Create Assignment
-          </a>
-          <a class="item" href="/submissions/new">
-            Create Submission
-          </a>
-          <a class="item" href="/logout">
-            Logout
-          </a>
+      <%- include('../partials/_sidebar-links') %>
       </div>
     <div class="pusher">
       <%- include('../partials/_header') %> 
@@ -44,7 +33,11 @@
               name="content"
               placeholder="Assignment content goes here..."></textarea>
             </div>
-            <button class="ui green submit button" type="submit">Create Assignment</button>
+            <div class="container">
+              <button id="bottom-btn" class="ui green submit button" type="submit">Create Assignment</button>
+              <a href="/assignments" class="ui red cancel button" >Cancel</a>
+            </div>
+              
         </form>
 </body>
 </html>
