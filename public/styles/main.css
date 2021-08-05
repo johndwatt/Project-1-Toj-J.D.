@@ -13,8 +13,12 @@ main {
     justify-content: center;
 }
 
+main.login {
+    margin: 35px 0;
+}
+
 section.container {
-    margin: 15px
+    margin: 15px;
 }
 
 .btn-flex.container {
@@ -31,6 +35,13 @@ section.container {
 }
 
 /* issues with this! keep working on it!!! */
+@media (min-width: 500px) {
+    main.login {
+        flex-direction: row;
+        margin: 35px;
+    }
+}
+
 @media (min-width: 700px) {
     main {
         flex-direction: row;
