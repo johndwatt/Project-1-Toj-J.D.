@@ -29,7 +29,7 @@ app.set("view engine", "ejs");
 
 app.use(
     session({
-      store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/lms" }),
+      store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI || "mongodb://localhost:27017/lms" }),
       secret: "tacotaco123",
       resave: false,
       saveUninitialized: false,
