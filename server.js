@@ -20,7 +20,7 @@ const controllers = require("./controllers/index");
 const app = express();
 
 // === Configuration===
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 /* SECTION App Config */
 app.set("view engine", "ejs");
