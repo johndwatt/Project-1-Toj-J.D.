@@ -13,7 +13,7 @@
               <% const assignment = assignments[i] %>
               <div class="ui card">
                 <div class=" content">
-                  <div class="ele-col ui top attached label"><%= assignment.dueDate %> </div>
+                  <div class="ele-col ui top attached label">Due Date: <%= new Date(assignment.dueDate).toLocaleString() %> </div>
                   <div class="header"><%= assignment.name %></div>
                   <div class="description">
                     <%= assignment.content %>

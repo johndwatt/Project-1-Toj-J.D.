@@ -5,10 +5,12 @@
     </head>
 <body>
     <div class="404 - ui center aligned container">
-        <h1 class="ui header">404 - Page Not Found 😞</h1>
+        <h1 class="ui header">404 - Page Not Found</h1>
+        <p>Uh oh! Looks like the page you are looking for dows not exist.</p>
               <% if (error) { %>
             <p><%= error.message %></p>
               <% } %>
+        <p>Click this button to find your way back:</p>
         <form action="/assignments" method="GET">
         <button 
         class="ui blue button" 

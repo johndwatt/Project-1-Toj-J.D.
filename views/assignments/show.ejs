@@ -13,7 +13,7 @@
            <div class="ui cards">
                 <div id="assignment-show" class="card">
                   <div class="content">
-                    <div class="ele-col ui top attached label"><%= assignment.dueDate %></div>
+                    <div class="ele-col ui top attached label">Due Date: <%= new Date(assignment.dueDate).toLocaleString() %></div>
                     <div class="header"><%= assignment.name %></div>
                     <div class="description">
                       <%= assignment.content %>
@@ -46,11 +46,8 @@
               <% const submission = submissions[i] %>
                 <div class="card">
                   <div class="content">
-                    <div class="ele-col ui top attached label">HTML</div>
+                    <div class="ele-col ui top attached label">Submission Date: <%= submission.submissionDate %></div>
                     <div class="header"><%= submission.studentName %></div>
-                    <div class="description">
-                      <%= submission.submissionDate %>
-                    </div>
                     <div class="description">
                       <a href="<%= submission.file %>">Download Submission File</a>
                     </div>
