@@ -2,6 +2,10 @@ body {
     background-color: #f9f9f9;    
 }
 
+body.pushable>.pusher {
+    background: #f9f9f9;
+}
+
 header {
     text-align: center;
     margin: 15px 15px 0 15px;

@@ -1,0 +1,20 @@
+:root {
+    --primary: #f9f9f9;
+    --secondary: #E8E8E8;
+}
+
+body {
+    background-color: var(--primary);
+}
+
+body.pushable>.pusher {
+    background: var(--primary);
+}
+
+button.ele-col.ui.button {
+    background-color: var(--secondary);
+}
+
+div.ele-col {
+    background-color: var(--secondary);
+} 
