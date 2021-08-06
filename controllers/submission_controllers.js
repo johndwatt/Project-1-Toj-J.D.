@@ -5,8 +5,7 @@ const { Submission, Assignment } = require("../models");
 const handleUploadFile = require('../utils/handleUploadFile');
 
 
-// new route - presentational
-
+// new route
 router.get("/new", async (req, res) => {
     try {
         const allAssignments = await Assignment.find({});
@@ -23,8 +22,7 @@ router.get("/new", async (req, res) => {
 
   });
   
-//  create route - functional
-
+//  create route
 router.post("/", handleUploadFile, async (req,res, next) => {
     try {
         const createdSubmissions = await Submission.create(req.body);
@@ -40,7 +38,6 @@ router.post("/", handleUploadFile, async (req,res, next) => {
 });
 
 // show route 
-
 router.get("/:id", async (req, res, next) => {
     try {
         const foundSubmission = await Submission.findById(req.params.id);
@@ -58,7 +55,6 @@ router.get("/:id", async (req, res, next) => {
 });
 
 // edit route
-
 router.get("/:id/edit", async (req, res, next) => {
     try {
         const foundItem = await Submission.findById(req.params.id);
@@ -74,7 +70,6 @@ router.get("/:id/edit", async (req, res, next) => {
 });
 
 // update route
-
 router.put("/:id", async (req, res, next) => {
     try {
         const updatedSubmission = await Submission.findByIdAndUpdate(req.params.id, 

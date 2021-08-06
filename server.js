@@ -44,15 +44,13 @@ app.use((req, res, next) => {
     return next();
 }); 
 
-//app.use(require("./utils/navlinks")); //this breaks nodemon, please check and fix
 
 app.use(express.static("public"));
 
 // multer calls for file 
-
 app.use(upload.single("file"));
 
-// NOTE allow body data for all routes
+// NOTE allows body data for all routes
 app.use(express.urlencoded({ extended: true }));
 
 app.use(methodOverride("_method"));
@@ -78,7 +76,7 @@ app.get("/", (req, res) => {
 });
 
 // 404
-app.get("/*", (req,res) => {
+app.get("/*", (req, res) => {
     const context = {
         error: req.error,
     };
