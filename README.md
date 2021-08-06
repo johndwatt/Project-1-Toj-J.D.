@@ -39,26 +39,35 @@ Thematic LMS improves upon Canvas by adding themes that change the color of the 
 Below, the screenshots of the site also show off the variety of themes available to users: 
 
 - Login and Sign-up Pages
+
 ![mvp-page](./readme-images/lms-login.png)
+
 ![mvp-page](./readme-images/lms-signup.png)
 
 - Assignments Index Page
+
 ![mvp-page](./readme-images/lms-index.png)
 
 - Assignment Show Page
+
 ![mvp-page](./readme-images/lms-show.png)
 
 - Submission Show Page
+
 ![mvp-page](./readme-images/lms-subshow.png)
 
 - Create/Update Assignment Page
+
 ![mvp-page](./readme-images/lms-create.png)
+
 ![mvp-page](./readme-images/lms-update.png)
 
 - Create Submission Page
+
 ![mvp-page](./readme-images/lms-subcreation.png)
 
 - Sidebar
+
 ![mvp-page](./readme-images/lms-sidebar.png)
 
 
@@ -78,25 +87,35 @@ Creating/updating an assignment/submission: Either the create or update assignme
 === Wireframes ===
 
 - Login and Sign-up Pages
-![mvp-wireframe](https://trello.com/1/cards/61044cfc7f3ad82b9b0ff57a/attachments/61044d086023706fce1bf4d7/download/Screen_Shot_2021-07-30_at_10.19.29_AM.png)
-![mvp-wireframe](https://trello.com/1/cards/61044cfc7f3ad82b9b0ff57a/attachments/61044d0a94a00d40faba9e53/download/Screen_Shot_2021-07-30_at_10.26.49_AM.png)
+
+![mvp-wireframe](./readme-images/login-page.png)
+
+![mvp-wireframe](./readme-images/sign-up.png)
 
 - Assignments Index Page
-![mvp-wireframe](https://trello.com/1/cards/61044cfc7f3ad82b9b0ff57a/attachments/61044d0e3fd75968dc3d8543/download/Screen_Shot_2021-07-30_at_11.32.55_AM.png)
+
+![mvp-wireframe](./readme-images/assignment-page.png)
 
 - Assignment Show Page
-![mvp-wireframe](https://trello.com/1/cards/61044cfc7f3ad82b9b0ff57a/attachments/61044d0d1c73447b6385ba30/download/Screen_Shot_2021-07-30_at_12.01.39_PM.png)
+
+![mvp-wireframe](./readme-images/view-assignment.png)
 
 - Submission Show Page
-![mvp-wireframe](https://trello.com/1/cards/61044cfc7f3ad82b9b0ff57a/attachments/61046bbbcc1ca20e15581d6f/download/Screen_Shot_2021-07-30_at_2.11.33_PM.png)
+
+![mvp-wireframe](./readme-images/view-submission.png)
 
 - Create/Update Assignment Page
-![mvp-wireframe](https://trello.com/1/cards/61044cfc7f3ad82b9b0ff57a/attachments/61044d11f1c2136392b87ad4/download/Screen_Shot_2021-07-30_at_11.50.11_AM.png)
-![mvp-wireframe](https://trello.com/1/cards/61044cfc7f3ad82b9b0ff57a/attachments/61044d148f36e80acbd1b5e4/download/Screen_Shot_2021-07-30_at_11.51.57_AM.png)
+
+![mvp-wireframe](./readme-images/create-assignment.png)
+
+![mvp-wireframe](./readme-images/update-assignment.png)
 
 - Create/Update Submission Page
-![mvp-wireframe](https://trello.com/1/cards/61044cfc7f3ad82b9b0ff57a/attachments/61044d13676f2b0ed5701524/download/Screen_Shot_2021-07-30_at_11.58.26_AM.png)
-![mvp-wireframe](https://trello.com/1/cards/61044cfc7f3ad82b9b0ff57a/attachments/61044d155ac6cb26936bbf8e/download/Screen_Shot_2021-07-30_at_11.54.58_AM.png)
+
+![mvp-wireframe](./readme-images/create-submission.png)
+
+![mvp-wireframe](./readme-images/update-submission.png)
 
 - 404 Page
-![mvp-wireframe](https://trello.com/1/cards/61044cfc7f3ad82b9b0ff57a/attachments/61044f67742506272c4c74ca/download/Screen_Shot_2021-07-30_at_12.12.10_PM.png)
+
+![mvp-wireframe](./readme-images/404.png)
