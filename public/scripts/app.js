@@ -4,7 +4,6 @@
     });
 
 // Themes
-
 $('#theme-selector').on("change", (e) => {
     $("html").css("--primary", e.target.value);
     let theme = e.target.value;
@@ -19,7 +18,6 @@ function checkTheme(){
 window.onload = checkTheme();
 
 // filepond
-
 // Get a reference to the file input element
 const inputElement = document.querySelector('input[type="file"]');
 
